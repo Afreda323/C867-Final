@@ -9,5 +9,14 @@
 #define networkStudent_h
 
 #include <stdio.h>
+#include "./student.h"
+
+class NetworkStudent : public Student {
+    using Student::Student;
+public:
+    virtual Degree getDegreeProgram();
+private:
+    Degree degreeProgram = NETWORKING;
+};
 
 #endif /* networkStudent_h */

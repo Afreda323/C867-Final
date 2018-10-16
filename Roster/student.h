@@ -26,7 +26,7 @@ private:
     Degree degreeProgram;
     
 public:
-    Student(string, string, string, string, int, int[3]);
+    Student(string, string, string, string, int, int days[3], Degree);
     ~Student();
     
     void setStudentId(string);
@@ -34,15 +34,15 @@ public:
     void setLastName(string);
     void setEmailAddress(string);
     void setAge(int);
-    void setDaysToComplete(vector<int>*);
+    void setDaysToComplete(int*);
     void setDegreeProgram(Degree);
     
-    string getStudentId();
-    string getFirstName();
-    string getLastName();
-    string getEmailAddress();
-    int getAge();
-    int * getDaysToComplete();
+    string getStudentId() const;
+    string getFirstName() const;
+    string getLastName() const;
+    string getEmailAddress() const;
+    int getAge() const;
+    const int *getDaysToComplete() const;
     
     virtual Degree getDegreeProgram();
     virtual void print();

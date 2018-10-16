@@ -9,5 +9,14 @@
 #define securityStudent_h
 
 #include <stdio.h>
+#include "./student.h"
+
+class SecurityStudent : public Student {
+    using Student::Student;
+public:
+    virtual Degree getDegreeProgram();
+private:
+    Degree degreeProgram = SECURITY;
+};
 
 #endif /* securityStudent_h */
