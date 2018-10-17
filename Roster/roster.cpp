@@ -33,12 +33,10 @@ int main() {
     Roster classRoster;
     Degree degree;
     
-    // Loop throufh, parse and ad student data to roster
+    // Loop through, parse and and student data to roster
     // based on the degree type of the student.
     for (int i = 0; i < sizeof(studentData)/ sizeof(studentData[i]); i++) {
-        string value;
-        string data[9];
-        string place = studentData[i];
+        string value, data[9], place = studentData[i];
         istringstream ss(place);
         
         int index = 0;
