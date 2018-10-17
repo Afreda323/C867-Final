@@ -37,8 +37,8 @@ void Student::setLastName(string ln) {
 void Student::setEmailAddress(string email) {
     emailAddress = email;
 };
-void Student::setAge(int age) {
-    age = age;
+void Student::setAge(int ageInt) {
+    age = ageInt;
 };
 void Student::setDaysToComplete(int *days) {
     for (int i = 0; i < 3; i++) {
@@ -74,12 +74,22 @@ Degree Student::getDegreeProgram() {
 };
 
 void Student::print() {
-    cout << "Student ID: " << studentId << "\t"
+    string degree;
+    
+    if (degreeProgram == 0)
+        degree = "Security";
+    else if (degreeProgram == 1)
+        degree = "Network";
+    else if (degreeProgram == 2)
+        degree = "Software";
+    
+    cout << studentId << "\t"
     << "First Name: " << firstName << "\t"
     << "Last Name: " << lastName << "\t"
     << "Email Address: " << emailAddress << "\t"
     << "Age: " << age << " "
-    << "Days In Course: " << daysToComplete[0] << ", "
-    << daysToComplete[1] << ", " << daysToComplete[2]
+    << "Days In Course: { " << daysToComplete[0] << ", "
+    << daysToComplete[1] << ", " << daysToComplete[2] << " } \t"
+    << "Degree Program: " << degree
     << endl;
 };

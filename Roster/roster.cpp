@@ -20,10 +20,21 @@ const string studentData[] = {
     "A5,Anthony,Freda,anthonyfreda323@gmail.com,23,10,15,20,SOFTWARE"
 };
 
+//Function that checks the validity of an email address string
+bool isValidEmail (string email) {
+    if (email.find("@") != string::npos && email.find(".") != string::npos && email.find(" ") == string::npos) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 int main() {
-    Roster roster;
+    Roster classRoster;
     Degree degree;
     
+    // Loop throufh, parse and ad student data to roster
+    // based on the degree type of the student.
     for (int i = 0; i < sizeof(studentData)/ sizeof(studentData[i]); i++) {
         string value;
         string data[9];
@@ -42,15 +53,25 @@ int main() {
             degree = SOFTWARE;
         else
             degree = NETWORK;
-        
-        cout << data[4] << " " << data[5] << " " << data[6] << " " << data[7] << endl;
-        
-        roster.add(data[0], data[1], data[2], data[3],
+                
+        classRoster.add(data[0], data[1], data[2], data[3],
                    stoi(data[4]), stoi(data[5]), stoi(data[6]),
                    stoi(data[7]), degree);
     }
     
-    roster.printAll();
+    // Method calls based on those mentioned in rubric
+    classRoster.printAll();
+    classRoster.printInvalidEmails();
+    
+    for (int i = 0; i < sizeof(classRoster.classRosterArray) / sizeof(classRoster.classRosterArray[i]); i++) {
+        classRoster.printDaysInCourse(classRoster.classRosterArray[i]->getStudentId());
+    }
+    cout << endl;
+    
+    classRoster.printByDegreeProgram(SOFTWARE);
+    classRoster.remove("A3");
+    classRoster.remove("A3");
+    classRoster.~Roster();
     
     return 0;
 };
@@ -83,26 +104,65 @@ void Roster::add(string studentID, string firstName, string lastName,
 };
 
 void Roster::remove(string studentID) {
+    bool found = false;
+    for (int i = 0; i < sizeof(classRosterArray) / sizeof(classRosterArray[i]); i++) {
+        if (classRosterArray[i] != nullptr && classRosterArray[i]->getStudentId() == studentID) {
+            classRosterArray[i] = nullptr;
+            found = true;
+            break;
+        }
+    }
     
+    if (found == false) {
+        cout << "Error Removing Student: A student with ID " << studentID << " was not found." << endl;
+    } else {
+        cout << studentID << " Removed." << endl;
+    }
 };
 
 void Roster::printAll() {
     for (int i = 0; i < sizeof(classRosterArray) / sizeof(classRosterArray[i]); i++) {
-        classRosterArray[i]->print();
-        cout << endl;
+        if (classRosterArray[i] != nullptr) {
+            classRosterArray[i]->print();
+        }
     }
+    cout << endl;
 };
 
 void Roster::printDaysInCourse(string studentID) {
-    
+    for (int i = 0; i < sizeof(classRosterArray) / sizeof(classRosterArray[i]); i++) {
+        if (classRosterArray[i] != nullptr) {
+            if (classRosterArray[i]->getStudentId() == studentID) {
+                const int * classes = classRosterArray[i]->getDaysToComplete();
+                int average = (classes[0] + classes[1] + classes[2]) / 3;
+                cout << studentID << " average: " << average << endl;
+            }
+        }
+    }
 };
 
 void Roster::printInvalidEmails() {
-    
+    for (int i = 0; i < sizeof(classRosterArray) / sizeof(classRosterArray[i]); i++) {
+        if (classRosterArray[i] != nullptr) {
+            if (!isValidEmail(classRosterArray[i]->getEmailAddress())) {
+                cout << classRosterArray[i]->getStudentId()
+                << " " << classRosterArray[i]->getEmailAddress()
+                << endl;
+            }
+        }
+    }
+    cout << endl;
 };
 
 void Roster::printByDegreeProgram(int degreeProgram) {
-    
+    for (int i = 0; i < sizeof(classRosterArray) / sizeof(classRosterArray[i]); i++) {
+        if (classRosterArray[i] != nullptr) {
+            if (classRosterArray[i]->getDegreeProgram() == degreeProgram) {
+                classRosterArray[i]->print();
+            }
+        }
+    }
+    cout << endl;
 };
 
 Roster::~Roster() {

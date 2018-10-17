@@ -15,10 +15,8 @@
 using namespace std;
 
 class Roster {
-private:
-    Student *classRosterArray[5] = { nullptr, nullptr, nullptr, nullptr, nullptr };
 public:
-    
+    Student *classRosterArray[5] = { nullptr, nullptr, nullptr, nullptr, nullptr };
     void add(string studentID, string firstName, string lastName,
              string emailAddress, int age, int daysInCourse1,
              int daysInCourse2, int daysInCourse3, Degree degree);
