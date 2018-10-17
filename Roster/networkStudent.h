@@ -16,7 +16,7 @@ class NetworkStudent : public Student {
 public:
     virtual Degree getDegreeProgram();
 private:
-    Degree degreeProgram = NETWORKING;
+    Degree degreeProgram = NETWORK;
 };
 
 #endif /* networkStudent_h */
