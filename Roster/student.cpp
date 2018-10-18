@@ -76,20 +76,20 @@ Degree Student::getDegreeProgram() {
 void Student::print() {
     string degree;
     
-    if (degreeProgram == 0)
+    if (getDegreeProgram() == 0)
         degree = "Security";
-    else if (degreeProgram == 1)
+    else if (getDegreeProgram() == 1)
         degree = "Network";
-    else if (degreeProgram == 2)
+    else if (getDegreeProgram() == 2)
         degree = "Software";
     
-    cout << studentId << "\t"
-    << "First Name: " << firstName << "\t"
-    << "Last Name: " << lastName << "\t"
-    << "Email Address: " << emailAddress << "\t"
-    << "Age: " << age << " "
-    << "Days In Course: { " << daysToComplete[0] << ", "
-    << daysToComplete[1] << ", " << daysToComplete[2] << " } \t"
+    cout << getStudentId() << "\t"
+    << "First Name: " << getFirstName() << "\t"
+    << "Last Name: " << getLastName() << "\t"
+    << "Email Address: " << getEmailAddress() << "\t"
+    << "Age: " << getAge() << " "
+    << "Days In Course: { " << getDaysToComplete()[0] << ", "
+    << getDaysToComplete()[1] << ", " << getDaysToComplete()[2] << " } \t"
     << "Degree Program: " << degree
     << endl;
 };

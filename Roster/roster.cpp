@@ -33,6 +33,10 @@ int main() {
     Roster classRoster;
     Degree degree;
     
+    cout << "SCRIPTING AND PROGRAMMING APPLICATIONS — C867" << endl;
+    cout << "Written in C++" << endl;
+    cout << "Anthony Freda - 001007249" << endl;
+    
     // Loop through, parse and and student data to roster
     // based on the degree type of the student.
     for (int i = 0; i < sizeof(studentData)/ sizeof(studentData[i]); i++) {
