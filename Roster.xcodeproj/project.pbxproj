@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27C062E721757CD300F1E539 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27C062E621757CD300F1E539 /* main.cpp */; };
+		27C062EF21757DA800F1E539 /* roster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27C062ED21757DA800F1E539 /* roster.cpp */; };
+		27C062F221757DD600F1E539 /* student.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27C062F021757DD600F1E539 /* student.cpp */; };
+		27C062F521757E3200F1E539 /* networkStudent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27C062F321757E3200F1E539 /* networkStudent.cpp */; };
+		27C062F821757E5900F1E539 /* securityStudent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27C062F621757E5900F1E539 /* securityStudent.cpp */; };
+		27C062FB21757E7600F1E539 /* softwareStudent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27C062F921757E7600F1E539 /* softwareStudent.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +28,17 @@
 
 /* Begin PBXFileReference section */
 		27C062E321757CD300F1E539 /* Roster */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Roster; sourceTree = BUILT_PRODUCTS_DIR; };
-		27C062E621757CD300F1E539 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		27C062ED21757DA800F1E539 /* roster.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = roster.cpp; sourceTree = "<group>"; };
+		27C062EE21757DA800F1E539 /* roster.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = roster.h; sourceTree = "<group>"; };
+		27C062F021757DD600F1E539 /* student.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = student.cpp; sourceTree = "<group>"; };
+		27C062F121757DD600F1E539 /* student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = student.h; sourceTree = "<group>"; };
+		27C062F321757E3200F1E539 /* networkStudent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = networkStudent.cpp; sourceTree = "<group>"; };
+		27C062F421757E3200F1E539 /* networkStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = networkStudent.h; sourceTree = "<group>"; };
+		27C062F621757E5900F1E539 /* securityStudent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = securityStudent.cpp; sourceTree = "<group>"; };
+		27C062F721757E5900F1E539 /* securityStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = securityStudent.h; sourceTree = "<group>"; };
+		27C062F921757E7600F1E539 /* softwareStudent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = softwareStudent.cpp; sourceTree = "<group>"; };
+		27C062FA21757E7600F1E539 /* softwareStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = softwareStudent.h; sourceTree = "<group>"; };
+		27C062FC21757EA900F1E539 /* degree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = degree.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +71,17 @@
 		27C062E521757CD300F1E539 /* Roster */ = {
 			isa = PBXGroup;
 			children = (
-				27C062E621757CD300F1E539 /* main.cpp */,
+				27C062ED21757DA800F1E539 /* roster.cpp */,
+				27C062EE21757DA800F1E539 /* roster.h */,
+				27C062F621757E5900F1E539 /* securityStudent.cpp */,
+				27C062F721757E5900F1E539 /* securityStudent.h */,
+				27C062FC21757EA900F1E539 /* degree.h */,
+				27C062F921757E7600F1E539 /* softwareStudent.cpp */,
+				27C062FA21757E7600F1E539 /* softwareStudent.h */,
+				27C062F321757E3200F1E539 /* networkStudent.cpp */,
+				27C062F421757E3200F1E539 /* networkStudent.h */,
+				27C062F021757DD600F1E539 /* student.cpp */,
+				27C062F121757DD600F1E539 /* student.h */,
 			);
 			path = Roster;
 			sourceTree = "<group>";
@@ -118,7 +142,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27C062E721757CD300F1E539 /* main.cpp in Sources */,
+				27C062F521757E3200F1E539 /* networkStudent.cpp in Sources */,
+				27C062FB21757E7600F1E539 /* softwareStudent.cpp in Sources */,
+				27C062EF21757DA800F1E539 /* roster.cpp in Sources */,
+				27C062F221757DD600F1E539 /* student.cpp in Sources */,
+				27C062F821757E5900F1E539 /* securityStudent.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
